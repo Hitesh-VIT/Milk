@@ -1,10 +1,10 @@
 from django.contrib.auth import logout
 from django.http import HttpResponseRedirect
-from django.shortcuts import render_to_response 
+from django.shortcuts import render_to_response,redirect
 
 
 def main_page(request):
-	return render_to_response('index.html')
+	return redirect('login form')
 def logout_page(request):
-	logout(reuest)
-	return HttpResponseRedirect('/')
+	logout(request)
+	return HttpResponseRedirect('login')

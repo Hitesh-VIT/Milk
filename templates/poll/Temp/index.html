@@ -71,7 +71,7 @@ input
     <div class="data-card">
       <div class="login">
         <h1>Login</h1>
-        <form name="signin"  method="post">{%csrf_token%}
+        <form name="signin" action="next" method="post">
           <div class="input-holder">
             Username:<br>
 				{{login_form.username}}
@@ -86,7 +86,7 @@ input
       </div>
       <div class="register">
         <h1>Register</h1>
-        <form name="signup"  method="post">{%csrf_token%}
+        <form name="signup" action="next" method="post">
           <div class="input-holder">
             Username:<br>
             {{lo.username}}
@@ -97,11 +97,11 @@ input
           </div>
           <div class="input-holder">
           Password:<br>
-          {{lo.password1}}
+          {{lo.password}}
           </div>
           <div class="input-holder">
           Re-enter Password:<br>
-          {{lo.password2}}
+          {{lo.password}}
           </div>
           <button type="submit" class="submit">Let's Go</button>
         </form>

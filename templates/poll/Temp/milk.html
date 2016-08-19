@@ -14,9 +14,12 @@ body{
 .head
 {
   margin-left:20vw;
+  margin-bottom:10px;
+}
+.heading
+{
   color:black;
   font-size:50px;
-  margin-bottom:10px;
 }
 input
 {
@@ -29,6 +32,7 @@ input
 .data-card
 {
   padding:40px;
+  padding-top:0;
   margin-left:20vw;
   width:60vw;
   background:white;
@@ -37,7 +41,7 @@ input
 .login
 {
   position:relative;
-  bottom: 160px;
+  bottom: -10px;
   display:inline-block;
   padding-right:100px;
 }
@@ -62,48 +66,49 @@ input
   margin-left:15px;
   cursor:pointer;
 }
+.logout-btn
+{
+  outline:none;
+  border:none;
+  padding:10px;
+  color:black;
+  background: white;
+  margin-left:15px;
+  display: inline-block;
+  margin-left:31vw;
+  font-size:18px;
+  margin-bottom:10px;
+  cursor:pointer;
+}
 </style>
   <body>
     <br>
     <div class="head">
-      Milk Wala
+      <div class="heading">
+        Milk Wala
+        <button class="logout-btn">Logout</button>
+      </div>
     </div>
     <div class="data-card">
       <div class="login">
-        <h1>Login</h1>
-        <form name="signin"  method="post">{%csrf_token%}
+        <h3>Hi John !</h3>
+        <h1>Skip a date</h1>
+        <form name="skipdate" action="" method="post">
           <div class="input-holder">
-            Username:<br>
-				{{login_form.username}}
-            
+			  {{user_form.date}}
+            Enter date to skip<br>
           </div>
-          <div class="input-holder">
-          Password:<br>
-				{{login_form.password}}
-          </div>
-          <button type="submit" class="submit">Let Me In</button>
+          <button type="submit" class="submit">Skip!</a>
         </form>
       </div>
       <div class="register">
-        <h1>Register</h1>
-        <form name="signup"  method="post">{%csrf_token%}
-          <div class="input-holder">
-            Username:<br>
-            {{lo.username}}
+        <h1>Order More Milk</h1>
+        <form name="moremilk" action="" method="post">
+          <div class="input-holder">{{milk_form.milk}}
+            Enter date to skip<br>
+           
           </div>
-          <div class="input-holder">
-          Email Id:<br>
-          {{lo.email}}
-          </div>
-          <div class="input-holder">
-          Password:<br>
-          {{lo.password1}}
-          </div>
-          <div class="input-holder">
-          Re-enter Password:<br>
-          {{lo.password2}}
-          </div>
-          <button type="submit" class="submit">Let's Go</button>
+          <a class="submit" style="font-size:90%;" onclick="alert('Payment cannot be processed');">Order</a>
         </form>
       </div>
     </div>

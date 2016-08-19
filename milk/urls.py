@@ -20,10 +20,9 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$',views.main_page),
-    url(r'^login', 'django.contrib.auth.views.login',name='login'),
     url(r'^login?next=$',include('poll.urls')),
     url(r'^poll/', include('poll.urls')),
-    url(r'^logout/$,',views.logout_page),
+    url(r'^poll/logout',views.logout_page,name='logout'),
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static'}),
     
 ]
